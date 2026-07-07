@@ -2,13 +2,13 @@
 import { ACQUISITION_MAILTO, SITE } from '../config/site';
 ---
 
-<section id="acquire" class="bg-slate-900 py-16">
-  <div class="max-w-3xl mx-auto px-6">
-    <div class="text-center mb-10">
+<section id="acquire" class="bg-slate-900 py-12 sm:py-16">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-8 sm:mb-10">
       <div class="inline px-4 py-1 rounded-3xl bg-white/10 text-white text-xs tracking-[1.5px] font-medium mb-4">
         SERIOUS INQUIRIES ONLY
       </div>
-      <h2 class="text-white text-4xl md:text-5xl tracking-tighter font-semibold">
+      <h2 class="text-white text-3xl sm:text-4xl md:text-5xl tracking-tighter font-semibold">
         Ready to own sdlreo.com?
       </h2>
       <p class="mt-4 text-white/70 max-w-md mx-auto">
@@ -17,26 +17,26 @@ import { ACQUISITION_MAILTO, SITE } from '../config/site';
       </p>
     </div>
 
-    <div class="bg-white rounded-3xl p-8 md:p-10 shadow-xl text-center">
+    <div class="bg-white rounded-3xl p-6 sm:p-8 md:p-10 shadow-xl text-center">
       <p class="text-xs font-semibold tracking-wider text-slate-500 mb-4">ACQUISITION CONTACT</p>
       <a
         href={`mailto:${SITE.email}`}
-        class="block text-2xl md:text-3xl font-semibold text-slate-900 hover:text-amber-brand transition-colors break-all"
+        class="block text-xl sm:text-2xl md:text-3xl font-semibold text-slate-900 hover:text-amber-brand transition-colors break-all"
       >
         {SITE.email}
       </a>
 
-      <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+      <div class="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
         <a
           href={ACQUISITION_MAILTO}
-          class="inline-flex items-center justify-center px-10 py-4 bg-slate-900 hover:bg-black text-white font-semibold rounded-3xl text-base transition-all active:scale-[0.985]"
+          class="inline-flex w-full sm:w-auto items-center justify-center px-8 sm:px-10 py-3.5 sm:py-4 bg-slate-900 hover:bg-black text-white font-semibold rounded-3xl text-sm sm:text-base transition-all active:scale-[0.985]"
         >
           Inquire About Acquisition
         </a>
         <button
           id="copy-email-btn"
           type="button"
-          class="inline-flex items-center justify-center px-8 py-4 border border-slate-200 hover:bg-slate-50 font-medium rounded-3xl text-base transition-all"
+          class="inline-flex w-full sm:w-auto items-center justify-center px-8 py-3.5 sm:py-4 border border-slate-200 hover:bg-slate-50 font-medium rounded-3xl text-sm sm:text-base transition-all"
         >
           <span id="copy-btn-text">Copy Contact Email</span>
         </button>

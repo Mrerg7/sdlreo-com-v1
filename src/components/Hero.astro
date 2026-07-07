@@ -4,21 +4,28 @@ import { ACQUISITION_MAILTO, cfImageUrl, CF_IMAGES } from '../config/site';
 const heroImage = cfImageUrl(CF_IMAGES.heroImageId);
 ---
 
-<header class="relative min-h-[620px] md:min-h-[680px] flex items-center overflow-hidden bg-slate-950">
-  <div
-    class="absolute inset-0 bg-cover bg-center"
-    style={`background-image: url('${heroImage}')`}
-    aria-hidden="true"
-  >
-    <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/90 to-slate-950/70"></div>
-    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-slate-950/30"></div>
-  </div>
+<header class="relative min-h-[520px] sm:min-h-[600px] lg:min-h-[680px] flex items-end sm:items-center overflow-hidden bg-slate-900">
+  <img
+    src={heroImage}
+    alt="Scottsdale luxury real estate — sdlreo.com premium REO domain"
+    class="absolute inset-0 w-full h-full object-cover object-[center_30%] sm:object-center"
+    width="1920"
+    height="1080"
+    fetchpriority="high"
+    decoding="async"
+  />
 
-  <div class="relative max-w-5xl mx-auto px-6 pt-8 md:pt-0">
+  <!-- Light scrim: stronger at bottom on mobile for text; left-side only on desktop -->
+  <div
+    class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/35 to-slate-950/10 sm:bg-gradient-to-r sm:from-slate-950/80 sm:via-slate-950/45 sm:to-slate-950/15"
+    aria-hidden="true"
+  ></div>
+
+  <div class="relative z-10 w-full max-w-5xl mx-auto px-4 sm:px-6 py-12 sm:py-16 lg:py-0">
     <div class="max-w-3xl">
-      <div class="inline-flex items-center gap-x-2 bg-white/10 backdrop-blur-md border border-white/20 px-4 py-1.5 rounded-3xl mb-8">
-        <div class="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse"></div>
-        <span class="text-xs font-semibold tracking-[1.5px] text-white/90">
+      <div class="inline-flex items-center gap-x-2 bg-white/10 backdrop-blur-md border border-white/20 px-3 sm:px-4 py-1.5 rounded-3xl mb-6 sm:mb-8 max-w-full">
+        <div class="w-1.5 h-1.5 shrink-0 bg-emerald-400 rounded-full animate-pulse"></div>
+        <span class="text-[10px] sm:text-xs font-semibold tracking-[1px] sm:tracking-[1.5px] text-white/90">
           PREMIUM REO DOMAIN &bull; SCOTTSDALE, AZ
         </span>
       </div>
@@ -27,26 +34,26 @@ const heroImage = cfImageUrl(CF_IMAGES.heroImageId);
         <span class="block font-bold tracking-tighter domain-name">sdlreo.com</span>
       </h1>
 
-      <p class="mt-4 max-w-xl text-2xl text-white/90 tracking-tight">
-        The premium domain for Scottsdale's leading<br />REO and bank-owned real estate specialist.
+      <p class="mt-3 sm:mt-4 max-w-xl text-lg sm:text-2xl text-white/90 tracking-tight leading-snug">
+        The premium domain for Scottsdale's leading REO and bank-owned real estate specialist.
       </p>
 
-      <div class="mt-9 flex flex-wrap gap-4">
+      <div class="mt-7 sm:mt-9 flex flex-col sm:flex-row gap-3 sm:gap-4">
         <a
           href={ACQUISITION_MAILTO}
-          class="px-10 py-4 bg-white text-slate-900 hover:bg-amber-50 font-semibold rounded-3xl text-base transition-all active:scale-[0.985] shadow-xl"
+          class="w-full sm:w-auto text-center px-8 sm:px-10 py-3.5 sm:py-4 bg-white text-slate-900 hover:bg-amber-50 font-semibold rounded-3xl text-sm sm:text-base transition-all active:scale-[0.985] shadow-xl"
         >
           Inquire to Purchase
         </a>
         <a
           href="#market"
-          class="px-8 py-4 border border-white/30 hover:bg-white/10 text-white font-semibold rounded-3xl text-base transition-all"
+          class="w-full sm:w-auto text-center px-8 py-3.5 sm:py-4 border border-white/30 hover:bg-white/10 text-white font-semibold rounded-3xl text-sm sm:text-base transition-all"
         >
-          Explore the Scottsdale REO Market
+          Explore the REO Market
         </a>
       </div>
 
-      <div class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-white/60">
+      <div class="mt-6 sm:mt-8 flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-y-1 sm:gap-x-6 text-xs text-white/70">
         <div>Short &bull; Authoritative &bull; Market-Specific</div>
         <div class="hidden sm:block w-px h-3 bg-white/30"></div>
         <div>Bank-Owned &bull; Motivated Sellers &bull; Opportunity</div>
@@ -56,10 +63,10 @@ const heroImage = cfImageUrl(CF_IMAGES.heroImageId);
 </header>
 
 <div class="border-b border-slate-200 bg-white">
-  <div class="max-w-5xl mx-auto px-6 py-5">
-    <div class="flex flex-wrap justify-center md:justify-between items-center gap-x-8 gap-y-3 text-sm text-center md:text-left">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 py-4 sm:py-5">
+    <div class="flex flex-col md:flex-row md:justify-between items-center gap-y-3 gap-x-8 text-xs sm:text-sm text-center md:text-left">
       <div>REO properties: Lender-owned &bull; As-is condition &bull; Clean title &bull; Below-market pricing</div>
-      <div class="hidden md:block text-slate-300">&bull;</div>
+      <div class="hidden md:block text-slate-300 shrink-0">&bull;</div>
       <div>Scottsdale: Arizona's most desirable luxury market for value opportunities</div>
     </div>
   </div>

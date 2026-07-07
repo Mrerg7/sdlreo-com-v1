@@ -4,13 +4,13 @@ import { getCollection } from 'astro:content';
 const items = (await getCollection('valueProps')).sort((a, b) => a.data.order - b.data.order);
 ---
 
-<section id="why" class="max-w-5xl mx-auto px-6 pt-16 pb-12">
+<section id="why" class="max-w-5xl mx-auto px-4 sm:px-6 pt-12 sm:pt-16 pb-10 sm:pb-12">
   <div class="max-w-2xl">
     <div class="uppercase tracking-[2px] text-xs font-semibold text-amber-brand mb-3">THE OPPORTUNITY</div>
-    <h2 class="text-5xl tracking-tighter font-semibold font-display">
-      Own the definitive domain<br />for Scottsdale REO real estate.
+    <h2 class="text-3xl sm:text-4xl lg:text-5xl tracking-tighter font-semibold font-display">
+      Own the definitive domain for Scottsdale REO real estate.
     </h2>
-    <p class="mt-5 text-lg text-slate-600">
+    <p class="mt-4 sm:mt-5 text-base sm:text-lg text-slate-600">
       sdlreo.com is short, powerful, and instantly communicates expertise in Real Estate Owned
       (bank-owned) properties in Scottsdale. It positions the owner as the go-to authority for
       motivated seller opportunities, below-market deals, and REO investment in Arizona's most
