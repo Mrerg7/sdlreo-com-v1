@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import { SITE, OG_IMAGE, ACQUISITION_MAILTO } from '../config/site';
+import { SITE, OG_IMAGE, ACQUISITION_MAILTO, DOMAIN_PRODUCT } from '../config/site';
 
 interface Props {
   title?: string;
@@ -19,6 +19,56 @@ const {
 const pathname = Astro.url.pathname.endsWith('/') ? Astro.url.pathname : `${Astro.url.pathname}/`;
 const canonicalURL = new URL(pathname, SITE.url);
 const publishedDate = '2026-07-07';
+
+const productReview = {
+  '@type': 'Review',
+  name: 'sdlreo.com Premium Domain Assessment',
+  author: {
+    '@type': 'Organization',
+    name: DOMAIN_PRODUCT.reviewAuthor,
+  },
+  reviewRating: {
+    '@type': 'Rating',
+    ratingValue: DOMAIN_PRODUCT.editorialRating,
+    bestRating: 5,
+  },
+  positiveNotes: {
+    '@type': 'ItemList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Instant REO authority — short, professional, memorable Scottsdale REO branding',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: "Scottsdale's premium opportunity in Arizona's most desirable luxury market",
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: 'Rare exact-match domain for specialized REO real estate verticals',
+      },
+    ],
+  },
+};
+
+const productOffers = DOMAIN_PRODUCT.listPrice
+  ? {
+      '@type': 'Offer',
+      url: ACQUISITION_MAILTO,
+      price: DOMAIN_PRODUCT.listPrice,
+      priceCurrency: DOMAIN_PRODUCT.priceCurrency,
+      priceValidUntil: DOMAIN_PRODUCT.priceValidUntil,
+      availability: 'https://schema.org/InStock',
+      seller: {
+        '@type': 'Organization',
+        name: SITE.name,
+        email: SITE.email,
+      },
+    }
+  : undefined;
 
 const structuredData = {
   '@context': 'https://schema.org',
@@ -55,17 +105,14 @@ const structuredData = {
         '@type': 'Brand',
         name: 'sdlreo.com',
       },
-      offers: {
-        '@type': 'Offer',
-        url: ACQUISITION_MAILTO,
-        priceCurrency: 'USD',
-        availability: 'https://schema.org/InStock',
-        seller: {
-          '@type': 'Organization',
-          name: SITE.name,
-          email: SITE.email,
-        },
+      review: productReview,
+      aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: DOMAIN_PRODUCT.editorialRating,
+        bestRating: 5,
+        reviewCount: 1,
       },
+      ...(productOffers ? { offers: productOffers } : {}),
     },
     {
       '@type': 'Organization',

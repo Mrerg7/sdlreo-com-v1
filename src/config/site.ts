@@ -22,3 +22,13 @@ export function cfImageUrl(imageId: string, variant = 'public'): string {
 export const OG_IMAGE = cfImageUrl(CF_IMAGES.heroImageId);
 
 export const ACQUISITION_MAILTO = `mailto:${SITE.email}?subject=${encodeURIComponent('sdlreo.com Domain Acquisition Inquiry')}&body=${encodeURIComponent('Hello,\n\nI am interested in acquiring sdlreo.com.\n\nIntended use:\nBudget range:\n\nThank you.')}`;
+
+/** Editorial domain assessment used in Product structured data. */
+export const DOMAIN_PRODUCT = {
+  reviewAuthor: 'Desert Rich Domain Group',
+  editorialRating: 5,
+  /** Set when a public list price is published on the acquisition section. */
+  listPrice: null as number | null,
+  priceCurrency: 'USD',
+  priceValidUntil: '2027-07-07',
+} as const;
