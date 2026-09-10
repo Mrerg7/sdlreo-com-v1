@@ -1,4 +1,5 @@
 name = "sdlreo-com-v1"
+main = "./src/worker.ts"
 compatibility_date = "2026-07-07"
 workers_dev = false
 preview_urls = false
@@ -13,8 +14,11 @@ custom_domain = true
 
 [assets]
 directory = "./dist"
+binding = "ASSETS"
 html_handling = "force-trailing-slash"
 not_found_handling = "404-page"
+# Required so www/http redirects run before static asset matching.
+run_worker_first = true
 
 [observability]
 enabled = true

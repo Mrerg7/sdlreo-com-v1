@@ -19,6 +19,7 @@ const {
 const pathname = Astro.url.pathname.endsWith('/') ? Astro.url.pathname : `${Astro.url.pathname}/`;
 const canonicalURL = new URL(pathname, SITE.url);
 const publishedDate = '2026-07-07';
+const modifiedDate = '2026-09-10';
 
 const productReview = {
   '@type': 'Review',
@@ -89,7 +90,7 @@ const structuredData = {
       description,
       isPartOf: { '@id': `${SITE.url}#website` },
       datePublished: publishedDate,
-      dateModified: publishedDate,
+      dateModified: modifiedDate,
       inLanguage: 'en-US',
     },
     {
@@ -135,7 +136,10 @@ const structuredData = {
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light" />
+    <meta name="theme-color" content="#0f172a" />
+    <meta name="format-detection" content="telephone=no" />
     <meta name="generator" content={Astro.generator} />
 
     <title>{title}</title>
