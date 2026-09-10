@@ -39,4 +39,32 @@
   .nav-scrolled {
     box-shadow: 0 1px 0 0 rgb(0 0 0 / 0.05);
   }
+
+  .hero-image {
+    transform: scale(1);
+    transform-origin: center 30%;
+    will-change: transform;
+    animation: hero-magnify 22s ease-out forwards;
+  }
+
+  @media (min-width: 640px) {
+    .hero-image {
+      transform-origin: center center;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-image {
+      animation: none;
+    }
+  }
+}
+
+@keyframes hero-magnify {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.06);
+  }
 }
